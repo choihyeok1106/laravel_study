@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+
+
+Route::get('/',function(){
+   return redirect('/plans');
+});
+
+Route::resource('plans','PlanController');
 
 Route::get('/home', 'HomeController@index')->name('home');
